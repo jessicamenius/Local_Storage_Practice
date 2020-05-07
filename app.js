@@ -1,5 +1,8 @@
 $(document).ready(function () {
   //   console.log("hello");
+  var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
+  //   console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));
+  $("#currentDate").text(currentDate);
 
   $("#btnSubmit6").on("click", function () {
     var userText = $(textInput6).val();
@@ -18,6 +21,8 @@ $(document).ready(function () {
 
   function render6Data() {
     var item = JSON.parse(localStorage.getItem("data6"));
+    var currentHour = moment().format("h");
+
     if (item != null) {
       $("textInput6").val(item.task);
     }
